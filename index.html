@@ -7,7 +7,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-    alert("MASSIVE AMMOUNT OF IMAGES INCOMING, GET READY!!!")
+    alert("MASSIVE AMMOUNT OF IMAGE INCOMMING");
+    $("#button").click(function(){
          $.ajax({
             url : "get.txt",
             dataType: "text",
@@ -25,6 +26,8 @@ $(document).ready(function(){
 })
 </script>
 </head>
+<div id="imageDiv"></div>  
 <body>
+    <input id="button" value="Click To Reveal Image" type="button">
 </body>
 </html>
