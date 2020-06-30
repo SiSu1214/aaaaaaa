@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow" />
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#button").click(function(){
+         $.ajax({
+            url : "get.txt",
+            dataType: "text",
+            success : function (data) {
+            console.log(data)
+               var lines = data.split(",")
+                for (var i = 0; i < lines.length; i++) {
+                    var img = $('<img class="dynamic">'); 
+                    img.attr('src', lines[i]);
+                    img.appendTo('#imageDiv');
+                }
+            }
+        });         
+     });
+})
+</script>
+</head>
+<body>
+<div id="imageDiv"></div>    
+<input value="clickMe" type="button" id="button">    
+</body>
+</html>
